@@ -32,11 +32,12 @@ project_root = fix_root()
 data = os.path.join(project_root, 'data')  # all data
 tmp = os.path.join(data, 'tmp')
 fig = os.path.join(data, 'fig')
+model = os.path.join(data, 'model')
 
 # other file path
 dataset_large = os.path.join(data, 'transactions.csv')
 dataset_small = os.path.join(data, 'transactions_small.csv')
 
 # creating different directory if they don't exist
-for folder in [data, tmp, fig]:
+for folder in [data, tmp, fig, model]:
     mkdir_p(folder)

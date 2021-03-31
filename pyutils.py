@@ -53,11 +53,12 @@ def mkdir_p(dir, verbose=False, backup_existing=False, if_contains=None):
 # ===============================================
 
 
-def pd_set_display(max_col=True, max_row=True):
+def pd_set_display(max_col=True, max_row=True, col_wrap=False):
     """
     Set to display all rows and columns in pandas dataframe
     :param max_col:
     :param max_row:
+    :param col_wrap: wrap up the line while printing
     :return:
     """
     if max_col:
@@ -65,10 +66,13 @@ def pd_set_display(max_col=True, max_row=True):
     if max_row:
         pd.set_option("max_rows", None)
 
+    if not col_wrap:
+        pd.set_option('display.expand_frame_repr', False)
+
 
 def header(line: str, type_=1):
     """
-    Print something within a block for easy visualization
+    Print line within a block for easy visualization
     :param line: line to pring
     :param type_: type of the header to use
     :return:
@@ -83,6 +87,7 @@ def header(line: str, type_=1):
         para = f'{eq}\n{line}\n{eq}'
     elif type_ == 2:
         """
+        -------------------------
         This is an example header
         -------------------------
         """
