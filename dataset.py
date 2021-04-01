@@ -404,12 +404,9 @@ class DatasetC1(Dataset):
 
         pyutils.pd_set_display()
 
-        df = self.get_data()
-        df_full = self.get_data()
-
         self.structure()
         self.describe_features()
-        # self._plot_columns()
+        self._plot_columns()
         self._plot_corr()
         self._plot_pairplot(x_cols=[self._target_col_name])
 

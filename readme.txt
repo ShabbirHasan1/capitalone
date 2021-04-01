@@ -26,7 +26,8 @@ question.py: Generate result for all the questions that are given in the challen
 How to run:
 ===========
 
-- Recreate conda environment from conda_project_env.yml
+- Recreate conda environment from conda_project_env.yml (This projects uses minimal number of common libraries such as
+numpy, pandas, matplotlib, sciket-learn etc. May not need all the libraries from this environment)
 
 - unzip the data and put transactions.txt under project directory
 
@@ -43,5 +44,10 @@ How to run:
 - Generate experimental data for all models
     python model_factory.py
 
+
+=============
+Unit testing:
+=============
+python -m unittest discover unittests
 
 
